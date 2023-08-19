@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public GameObject riddleCanvas;
     public GameObject losePanel;
     [SerializeField]
-    private float speed;
+    public  float speed;
    
 
     // Start is called before the first frame update
@@ -36,8 +36,10 @@ public class PlayerController : MonoBehaviour
         else if (other.CompareTag("Riddle"))
         {
             riddleCanvas.SetActive(true);
+            speed = 0;
             Debug.Log("Player collided with Riddle object");
             // add code to make player spped 0 (stops player from moving when riddle is up, the restore back to normal when riddle is done
+
         }
 
     }

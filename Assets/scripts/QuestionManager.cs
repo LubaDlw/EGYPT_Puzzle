@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class QuestionManager : MonoBehaviour
 {
@@ -55,6 +56,7 @@ public class QuestionManager : MonoBehaviour
             {
                 Debug.Log("All questions answered!");
                 playerController.riddleCanvas.SetActive(false);
+                playerController.speed = 5;
                 // win function
             }
         }
@@ -70,6 +72,12 @@ public class QuestionManager : MonoBehaviour
 
         
        // questionPanel.SetActive(false);
+    }
+
+    public void ResetLevel()
+    {
+        // code to restart level after wrong code is used bru
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 
