@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public GameObject losePanel;
     [SerializeField]
     public  float speed;
+    private bool riddleTriggered = false; //This helps make the collider onlu trigger once and no more
    
 
     // Start is called before the first frame update
@@ -33,12 +34,13 @@ public class PlayerController : MonoBehaviour
             Debug.Log("is colliding");
             
         }
-        else if (other.CompareTag("Riddle"))
+        else if (other.CompareTag("Riddle") && !riddleTriggered)
         {
+            riddleTriggered = true;
             riddleCanvas.SetActive(true);
-            speed = 0;
+            speed = 0; // to fix bug of player moving during riddle.
             Debug.Log("Player collided with Riddle object");
-            // add code to make player spped 0 (stops player from moving when riddle is up, the restore back to normal when riddle is done
+           
 
         }
 
