@@ -55,24 +55,24 @@ public class QuestionManager : MonoBehaviour
             {
                 Debug.Log("All questions answered!");
                 playerController.riddleCanvas.SetActive(false);
-                // Hide the question panel or do other end-game logic
+                // win function
             }
         }
         else
         {
-            // Wrong answer logic
+            // Wrong answer logic + LosePanel
             Debug.Log("Wrong answer! You lose.");
-            // Show the lose panel
-            // Assuming you have a GameObject reference for the lose panel in your script
-           // losePanel.SetActive(true);
-            // Here you can disable other UI elements, stop player movement, etc.
+            playerController.losePanel.SetActive(true);
+            
+            // add logic to restart scene after 5 seconds
+           
         }
 
-        // Regardless of correct or wrong answer, you can disable the question panel
+        
        // questionPanel.SetActive(false);
     }
 
 
 
-    // Add other methods as needed
+   
 }

@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D myRB;
     public GameObject levelComplete;
     public GameObject riddleCanvas;
+    public GameObject losePanel;
     [SerializeField]
     private float speed;
    
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
         {
             riddleCanvas.SetActive(true);
             Debug.Log("Player collided with Riddle object");
+            // add code to make player spped 0 (stops player from moving when riddle is up, the restore back to normal when riddle is done
         }
 
     }
