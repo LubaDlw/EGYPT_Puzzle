@@ -1,49 +1,62 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class HintManager : MonoBehaviour
 {
-    public int stars;
+    public int stars = 0;
     public TextMeshProUGUI starsCount;
-    public float displayTime = 10f;
+    public float displayTime = 5f;
 
     public GameObject hint;
     public GameObject hintActual;
+    public GameObject hintButton;
 
     public bool isDisplaying = false;
-    void Start()
+
+    private void Start()
+    {
+        Button buttonComponent = hintButton.GetComponent<Button>();
+
+        buttonComponent.onClick.AddListener(ShowHint);
+    }
+
+    private void Update()
     {
         
     }
 
-    // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("called!");
+        Debug.Log("It works!");
 
-        if (other.CompareTag("Star"))
+        if (other.CompareTag("Player"))
         {
-            Destroy(other.gameObject);
+            Destroy(gameObject);
             stars++;
             starsCount.text = stars.ToString();
 
-            if (stars > 5)
+            if (stars >= 1) // checks if the player has at least 1 star collected
             {
-                hint.SetActive(true);
+                hint.SetActive(true); // brings up the hint panel and not the hint itself, place this under the gameobject used for showing the riddle popup to make it so that it only shows up there
             }
-
-            else if (stars < 5)
+            else
             {
                 hint.SetActive(false);
             }
         }
     }
 
-    private IEnumerator ShowHint()
+    public void ShowHint()
     {
-        stars -= 5;
+        StartCoroutine(ShowHintCoroutine()); //This calls on the coroutine I set up below, allowing it to be accessed via buttopn press since IEnumerator's aren't visible on the inspector
+    }
+
+    public IEnumerator ShowHintCoroutine() //handles the logic for displaying the hint text
+    {
+        stars -= 1;
 
         isDisplaying = true;
         DisplayText();
@@ -54,11 +67,11 @@ public class HintManager : MonoBehaviour
 
     private void DisplayText()
     {
-        hintActual.gameObject.SetActive(true);
+        hintActual.SetActive(true);
     }
 
     private void HideText()
     {
-        hintActual.gameObject.SetActive(false);
+        hintActual.SetActive(false);
     }
 }
