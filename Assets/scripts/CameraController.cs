@@ -10,13 +10,17 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
-    {
-        transform.position = new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z);
+    { // this is got the camera BG
+        float clampedX = Mathf.Clamp(target.position.x, minPosition.x, maxPosition.x);
+        float clampedY = Mathf.Clamp(target.position.y, minPosition.y, maxPosition.y);
+
+        transform.position = new Vector3(clampedX, clampedY, transform.position.z);
+
     }
 
 

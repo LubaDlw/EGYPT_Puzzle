@@ -4144,8 +4144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1652963688}
-  minPosition: {x: -7, y: -8}
-  maxPosition: {x: 13, y: 8}
+  minPosition: {x: -29, y: -8}
+  maxPosition: {x: 29, y: 30}
 --- !u!81 &781407476
 AudioListener:
   m_ObjectHideFlags: 0
