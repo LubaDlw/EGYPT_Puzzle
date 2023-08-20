@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public GameObject losePanel;
     [SerializeField]
     public  float speed;
-    private bool riddleTriggered = false; //This helps make the collider onlu trigger once and no more
+    private bool riddleTriggered = false; //This helps make the collider only trigger once and no more
    
 
     // Start is called before the first frame update

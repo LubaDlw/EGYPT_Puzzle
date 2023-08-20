@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FinishLine
   - Riddle
+  - Star
   layers:
   - Default
   - TransparentFX
