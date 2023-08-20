@@ -4174,8 +4174,7 @@ MonoBehaviour:
   - {fileID: 721213410}
   playerController: {fileID: 1652963684}
   questions:
-  - {fileID: 11400000, guid: 310b9eee3cb4d7a499e55d3d89b50153, type: 2}
-  - {fileID: 11400000, guid: 6c990b6f182ff6942be005397b819de0, type: 2}
+  - {fileID: 11400000, guid: 88714b004a6305645a89c5440787c5aa, type: 2}
 --- !u!4 &1139188959
 Transform:
   m_ObjectHideFlags: 0
@@ -5338,6 +5337,7 @@ MonoBehaviour:
   levelComplete: {fileID: 300165186}
   riddleCanvas: {fileID: 1908176121}
   losePanel: {fileID: 649312042}
+  levelDone: {fileID: 1826192571}
   speed: 7
 --- !u!58 &1652963685
 CircleCollider2D:
@@ -5494,7 +5494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693353760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.51, y: 7.52, z: 139.65485}
+  m_LocalPosition: {x: -7.33, y: 3.24, z: 139.65485}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5672,7 +5672,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -826.48, y: 430.46}
+  m_AnchoredPosition: {x: -826.4799, y: 430.46}
   m_SizeDelta: {x: 1652.96, y: 860.92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1736161366

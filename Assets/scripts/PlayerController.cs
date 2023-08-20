@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("FinishLine"))
         {
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            levelDone.text = "Level " + (currentSceneIndex + 1) + "Complete";
+            levelDone.text = "Level " + (currentSceneIndex + 1) + " Complete";
             levelComplete.SetActive(true);
             Debug.Log("is colliding");
             

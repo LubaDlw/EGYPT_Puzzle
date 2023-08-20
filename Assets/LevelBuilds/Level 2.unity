@@ -6319,6 +6319,7 @@ MonoBehaviour:
   levelComplete: {fileID: 1541569910}
   riddleCanvas: {fileID: 1833972296}
   losePanel: {fileID: 2087362585}
+  levelDone: {fileID: 1200733961}
   speed: 7
 --- !u!50 &1705309965
 Rigidbody2D:
