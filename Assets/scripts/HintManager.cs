@@ -21,12 +21,11 @@ public class HintManager : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D other)
     {
-
         Debug.Log("called!");
 
         if (other.CompareTag("Star"))
         {
-            Destroy(gameObject);
+            Destroy(other.gameObject);
             stars++;
             starsCount.text = stars.ToString();
 
