@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public GameObject levelComplete;
     public GameObject riddleCanvas;
     public GameObject losePanel;
+    public TextMeshProUGUI levelDone;
     [SerializeField]
     public  float speed;
     private bool riddleTriggered = false; //This helps make the collider only trigger once and no more
@@ -30,6 +33,8 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("FinishLine"))
         {
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            levelDone.text = "Level " + (currentSceneIndex + 1) + "Complete";
             levelComplete.SetActive(true);
             Debug.Log("is colliding");
             
