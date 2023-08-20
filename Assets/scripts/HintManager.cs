@@ -6,7 +6,7 @@ using TMPro;
 
 public class HintManager : MonoBehaviour
 {
-    public int stars = 0;
+    public int stars;
     public TextMeshProUGUI starsCount;
     public float displayTime = 5f;
 
@@ -36,7 +36,7 @@ public class HintManager : MonoBehaviour
         {
             Destroy(gameObject);
             stars++;
-            starsCount.text = stars.ToString();
+            UpdateStarsText();
 
             if (stars >= 1) // checks if the player has at least 1 star collected
             {
@@ -55,14 +55,15 @@ public class HintManager : MonoBehaviour
     }
 
     public IEnumerator ShowHintCoroutine() //handles the logic for displaying the hint text
-    {
-        stars -= 1;
-
+    { 
         isDisplaying = true;
         DisplayText();
         yield return new WaitForSeconds(displayTime);
         HideText();
         isDisplaying = false;
+
+        stars--;
+        UpdateStarsText();
     }
 
     private void DisplayText()
@@ -73,5 +74,10 @@ public class HintManager : MonoBehaviour
     private void HideText()
     {
         hintActual.SetActive(false);
+    }
+
+    private void UpdateStarsText() // Just updates the count every time there's a change to 'stars'.
+    {
+        starsCount.text = stars.ToString();
     }
 }
